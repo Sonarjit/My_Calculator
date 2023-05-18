@@ -2,14 +2,15 @@ import './App.css';
 import { useState, useRef } from 'react';
 
 function App() {
-const [result,setResult] =useState("")
-const [input,setInput] = useState("")
-const [display, setDisplay] = useState("")
-const inputNumber = useRef(null);
+const [result,setResult] =useState("") //defining the state of result variable
+const [input,setInput] = useState("") //defining the state of input variable
+const [display, setDisplay] = useState("") //defining the state of display variable
+const inputNumber = useRef(null); 
 
 function handleChange (e) { 
   setInput(e.target.value)
 }
+//Addition function
 function add(e) {
   e.preventDefault();
   if (input<0) {
@@ -18,6 +19,7 @@ function add(e) {
   setInput("")
   inputNumber.current.focus()
 }
+ //Substraction function
 function subtract(e) {
   e.preventDefault();
   if (input<0) {
@@ -26,6 +28,7 @@ function subtract(e) {
   setInput("")
   inputNumber.current.focus()
 }
+ //Multiplication function
 function multiplcation(e) {
   e.preventDefault();
   if (input<0) {
@@ -34,6 +37,7 @@ function multiplcation(e) {
   setInput("")
   inputNumber.current.focus()
 }
+ //Division function
 function division(e) {
   e.preventDefault();
   if (input<0) {
@@ -42,6 +46,8 @@ function division(e) {
   setInput("")
   inputNumber.current.focus()
 }
+  
+//Fuction to make ready for calculation
 function ok(e) {
   e.preventDefault();
   if (input<0) {
@@ -49,23 +55,29 @@ function ok(e) {
     } else (setDisplay(display + input.toString()))
   setInput("")
 }
+  
+//Fuction to calculate the the expression shown on display
 function equal(e) {
   e.preventDefault()
   setInput("")
   try{
   setResult(eval(display))
   } catch {
-    {alert('Please enter a valid expression!')}
+    alert('Please enter a valid expression!')
     setResult("")
     setDisplay("")
     setInput("")
   }
- } 
+ }
+  
+//Fucntion to reset the input 
 function resetInput(e) {
   e.preventDefault();
   setInput("")
   setDisplay("")
 }
+  
+//Function to reset the calculator
 function resetCalculation (e) {
   e.preventDefault();
   setResult("")
