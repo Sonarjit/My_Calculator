@@ -1,7 +1,7 @@
 
 # Working Calculator | ReactJs
 
-##Objective
+## Objective
 Built a responsive ReactJs web application, allowing users to perform basic arithmetic operations such as addition, subtraction, multiplication, and division on a given set of numbers.
 ## Getting Started
 To use this application, clone the repository to your local machine and run in your terminal to start the development server.
